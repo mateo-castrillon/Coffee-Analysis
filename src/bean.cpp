@@ -88,3 +88,7 @@ void Bean::drawId(cv::Mat *im) const {
 
     cv::putText(*im, "iD: " + std::to_string(_id), upperleft, cv::FONT_HERSHEY_SIMPLEX, 0.5, (0));
 }
+
+cv::Mat *Bean::getImgPtr() {
+    return _img;
+}

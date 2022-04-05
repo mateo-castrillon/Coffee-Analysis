@@ -38,6 +38,7 @@ public:
     void drawCentroid(cv::Mat *im) const;
     void drawId(cv::Mat *im) const;
 
+    cv::Mat* getImgPtr();
 
 private:
     //Centroid _position;

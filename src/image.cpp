@@ -13,9 +13,7 @@ Image::Image(const std::string& filename) {
 }
 
 Image::~Image() {
-    std::for_each(threads.begin(), threads.end(), [](std::thread &t) {
-        t.join();
-    });
+
 }
 
 cv::Mat Image::getOriginal() {
