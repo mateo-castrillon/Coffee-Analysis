@@ -13,7 +13,6 @@
 
 Image& threadFn(const std::string& path){
     auto t0 = (double) cv::getTickCount();
-    //TODO try a unique pointer here
     auto* img = new Image(path);
 
     if (img->_bgr.empty())
