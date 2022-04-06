@@ -4,7 +4,7 @@ This repo shows a few samples of image processing anylysis on wet coffe beans.
 
 ## How to compile and run
 
-It runs with C++17, -pthreads and CMake together with [OpenCV 4.x](https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html).
+It runs with C++17, -pthreads and CMake together with [OpenCV 4.x](https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html) nd the boost library.
 The File `CMakeLists.txt` in the root directory configures the build process
 
 In order to clone the images you'll need `git lfs`

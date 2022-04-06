@@ -4,12 +4,12 @@
 #include <filesystem>
 #include <future>
 #include <iomanip>
+#include <boost/filesystem.hpp>
 
 #include "bean.h"
 #include "utils.h"
 #include "vutils.h"
 #include "image.h"
-
 
 Image& threadFn(const std::string& path){
     auto t0 = (double) cv::getTickCount();
@@ -49,16 +49,6 @@ Image& threadFn(const std::string& path){
     return *img;
 }
 
-void printNumber(int x) {
-    std::cout << "X:" << std::setw(6) << x << ":X\n";
-}
-
-void printStuff() {
-    printNumber(528);
-    printNumber(3);
-    printNumber(73826);
-    printNumber(37);
-}
 
 int main() {
     std::vector<std::thread> threads;
@@ -67,9 +57,20 @@ int main() {
     string path = GetPreviousPathDir(GetCurrentBuildDir());
     std::vector<std::string> paths;
 
-    for (const auto& dirEntry : std::filesystem::recursive_directory_iterator("../images/")) {
-        paths.emplace_back(dirEntry.path());
+    for (auto i = boost::filesystem::directory_iterator("../images/"); i != boost::filesystem::directory_iterator(); i++)
+    {
+        if (!is_directory(i->path())) //we eliminate directories
+        {
+            cout << i->path() << endl;
+            paths.emplace_back(i->path().string());
+        }
+        else
+            continue;
     }
+
+//    for (const auto& dirEntry : std::filesystem::recursive_directory_iterator("../images/")) {
+//        paths.emplace_back(dirEntry.path());
+//    }
 
     int batch_size = 4;
     auto namesPartition = vutils::partition(paths.begin(), paths.end(), batch_size);

@@ -9,9 +9,14 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIBRARY_DIRS})
 add_definitions(${OpenCV_DEFINITIONS})
 
+FIND_PACKAGE( Boost COMPONENTS system filesystem REQUIRED )
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+link_directories(${Boost_LIBRARY_DIR})
+
+
 # Find all executables
 file(GLOB project_SRCS src/*.cpp) #src/*.h
 
 # Add project executable
 add_executable(capstone ${project_SRCS})
-target_link_libraries(capstone ${OpenCV_LIBRARIES})
+target_link_libraries(capstone ${OpenCV_LIBRARIES} ${Boost_LIBRARIES})
