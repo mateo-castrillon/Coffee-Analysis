@@ -1,4 +1,4 @@
-# Coffee Demo
+# Coffee Analysis
 
 This repo shows a few samples of image processing anylysis on wet coffe beans. It's a free choice project for the final capstone project of th C++ Nanodegree.
 
@@ -28,6 +28,7 @@ The algo also has an extra internal implementation of threads, where an image cr
 Specifically, the code segments the beans and the analyzes shape (convex hull method) and darkness (hand made convolution).
 
 Defective beans are the ones with mechanical damage (irregular shape) OR dark spots on their surface, as seen in the images.
+
 ![img1](assets/readme_dark.png)
 
 ![img2](assets/readme_mech_damage.jpg)
@@ -40,7 +41,7 @@ Additionally, the shape defects are marked in the image and the recognized dark 
 ### File and Class Structure
 
 
-##Project Rubric points Adressed:
+## Project Rubric points Adressed:
 #### Loops, Functions, I/O
 
 - The project demonstrates an understanding of C++ functions and control structures -> this can be observed across all files
@@ -50,7 +51,6 @@ Additionally, the shape defects are marked in the image and the recognized dark 
 
 - The project uses Object Oriented Programming techniques. -> `image.cpp` `bean.cpp`
 - Classes use appropriate access specifiers for class members. -> `image.h` `bean.h`
-- Class constructors utilize member initialization lists.
 - Classes encapsulate behavior -> class `Image` encapsulates image operations, class `Bean` encapsulates bean information and some extra operations done for each "bean" region of the image, based on what the image class is complementing on the bean's attributes.
 - Templates generalize functions in the project. -> `vutils.h 29`
 

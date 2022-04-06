@@ -71,7 +71,7 @@ int main() {
         paths.emplace_back(dirEntry.path());
     }
 
-    int batch_size = 2;
+    int batch_size = 4;
     auto namesPartition = vutils::partition(paths.begin(), paths.end(), batch_size);
 
     for (unsigned batchCount = 0; batchCount < namesPartition.size(); ++batchCount) {

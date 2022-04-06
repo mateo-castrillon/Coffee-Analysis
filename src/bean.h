@@ -45,7 +45,7 @@ private:
 
     int _id;
     cv::Point _centroid;
-    cv::Mat* _img = nullptr;
+    cv::Mat* _img = nullptr; // this might be useful for debugging, one can always know to which image the bean belongs
     std::vector<cv::Point> _beanContours;
 
 
