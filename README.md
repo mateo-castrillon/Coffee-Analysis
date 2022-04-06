@@ -1,12 +1,13 @@
 # Coffee Analysis
 
-This repo shows a few samples of image processing anylysis on wet coffe beans. It's a free choice project for the final capstone project of th C++ Nanodegree.
+This repo shows a few samples of image processing anylysis on wet coffe beans.
 
 ## How to compile and run
 
 It runs with C++17, -pthreads and CMake together with [OpenCV 4.x](https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html).
 The File `CMakeLists.txt` in the root directory configures the build process
 
+In order to clone the images you'll need `git lfs`
 
 The repo works with cmake:
 
@@ -28,6 +29,9 @@ The algo also has an extra internal implementation of threads, where an image cr
 Specifically, the code segments the beans and the analyzes shape (convex hull method) and darkness (hand made convolution).
 
 Defective beans are the ones with mechanical damage (irregular shape) OR dark spots on their surface, as seen in the images.
+
+The beans on the images are already manually sorted out, i.e. the results of the algorithm should be rejecting all beans except the ones present on the images labelled as "healthy". Of course the algorithm is not always 100% accurate, but still very close. 
+
 
 ![img1](assets/readme_dark.png)
 
