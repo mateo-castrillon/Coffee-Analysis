@@ -30,8 +30,7 @@ Specifically, the code segments the beans and the analyzes shape (convex hull me
 
 Defective beans are the ones with mechanical damage (irregular shape) OR dark spots on their surface, as seen in the images.
 
-The beans on the images are already manually sorted out, i.e. the results of the algorithm should be rejecting all beans except the ones present on the images labelled as "healthy". Of course the algorithm is not always 100% accurate, but still very close. 
-
+The beans on the images are already manually sorted out, i.e. the results of the algorithm should be rejecting all beans except the ones present on the images labelled as "healthy". Of course the algorithm is not always 100% accurate, but still very close.
 
 ![img1](assets/readme_dark.png)
 
@@ -43,6 +42,14 @@ The terminal output indicates a lot of info for each bean. Each of the has an ID
 Additionally, the shape defects are marked in the image and the recognized dark spots are marked in green. This info is also showed on the terminal.
 
 ### File and Class Structure
+
+The Code has a class image that takes care of all image related processes like threshholding, extracting regions, and information about the beans.
+
+The image class makes use of another class called Bean, which stores all information related to the beans such as id, locations, defects, etc and also has some static functions to draw the beans.
+
+There are also a `utils` and `vutils` files with helpfull functions to handle files and segmenting a vector into batches respectively.
+
+The `main.cpp` creates a batch of `n` images and starts a thread for each of them, waits until the are done and then starts again with another `n` threads for `n` images.
 
 
 ## Project Rubric points Adressed:
