@@ -1,6 +1,6 @@
 # Coffee Demo
 
-This repo shows a few samples of image processing anylysis on wet coffe beans.
+This repo shows a few samples of image processing anylysis on wet coffe beans. It's a free choice project for the final capstone project of th C++ Nanodegree.
 
 ## How to compile and run
 
