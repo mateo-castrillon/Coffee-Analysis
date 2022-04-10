@@ -50,29 +50,3 @@ The image class makes use of another class called Bean, which stores all informa
 There are also a `utils` and `vutils` files with helpfull functions to handle files and segmenting a vector into batches respectively.
 
 The `main.cpp` creates a batch of `n` images and starts a thread for each of them, waits until the are done and then starts again with another `n` threads for `n` images.
-
-
-## Project Rubric points Adressed:
-#### Loops, Functions, I/O
-
-- The project demonstrates an understanding of C++ functions and control structures -> this can be observed across all files
-- The project reads data from a file and process the data, or the program writes data to a file -> `main.cpp 71`
-
-#### Object Oriented Programming
-
-- The project uses Object Oriented Programming techniques. -> `image.cpp` `bean.cpp`
-- Classes use appropriate access specifiers for class members. -> `image.h` `bean.h`
-- Classes encapsulate behavior -> class `Image` encapsulates image operations, class `Bean` encapsulates bean information and some extra operations done for each "bean" region of the image, based on what the image class is complementing on the bean's attributes.
-- Templates generalize functions in the project. -> `vutils.h 29`
-
-#### Memory Management
-
-- The project makes use of references in function declarations. -> `main.cpp 14`
-- The project uses move semantics to move data, instead of copying it, where possible. -> `main.cpp 104`
-- The project uses smart pointers instead of raw pointers. -> `cv::Mat` is n implementation of shared pointers.
-
-#### Concurrency
-
-- The project uses multithreading. -> `main.cpp 89` `image.cpp 114`
-- A promise and future is used in the project.-> `main.cpp 81`
-- A mutex or lock is used in the project. -> `image.cpp 150`
